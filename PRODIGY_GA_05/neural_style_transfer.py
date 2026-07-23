@@ -14,6 +14,7 @@ def gram_matrix(tensor):
     Compute Gram Matrix to measure correlation between feature map channels.
     G = F * F^T
     """
+    import torch
     b, c, h, w = tensor.size()
     features = tensor.view(b * c, h * w)
     gram = torch.mm(features, features.t())
